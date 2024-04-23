@@ -1,0 +1,113 @@
+/* Estilo geral do body incluindo o fundo pontilhado explicado anteriormente */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    background-image: radial-gradient(circle at center, #ccc 1px, transparent 0),
+                      radial-gradient(circle at center, #ccc 1px, transparent 0);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+
+    /* Personalizações do scrollbar */
+    overflow-y: scroll;
+}
+
+/* Personalização do scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Cor de fundo da trilha */
+    border-radius: 10px; /* Bordas arredondadas para a trilha */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #0056b3; /* Cor do polegar, que é a parte móvel do scrollbar */
+    border-radius: 10px; /* Bordas arredondadas para o polegar */
+    border: 3px solid #f0f0f0; /* Borda em torno do polegar para criar um efeito de "grip" */
+}
+
+/* Opcional: estilo para o scrollbar quando é clicado */
+::-webkit-scrollbar-thumb:active {
+    background-color: #003580; /* Cor mais escura para o polegar quando ativo */
+}
+
+
+.content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin: 0 0 10px 0;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInDrop 1.2s forwards;
+}
+@keyframes fadeInDrop {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+h1 .newsletter-word {
+    font-weight: bold;
+    color: #0056b3;
+    animation: neonGlow 2s infinite ease-in-out;
+}
+@keyframes neonGlow {
+    0%, 100% {
+        text-shadow: 0 0 8px rgba(0, 86, 179, 0.5), 0 0 20px rgba(0, 86, 179, 0.3), 0 0 35px rgba(0, 86, 179, 0.1);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 86, 179, 0.75), 0 0 30px rgba(0, 86, 179, 0.5), 0 0 50px rgba(0, 86, 179, 0.25);
+    }
+}
+p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 0;
+}
+.newsletter-form {
+    background: white;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.newsletter-form:hover {
+    transform: scale(1.05);
+}
+.newsletter-input {
+    padding: 0.8em;
+    margin-right: 0.5em;
+    width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.newsletter-input:focus {
+    border-color: #a0c4ff;
+    box-shadow: 0 0 8px rgba(160, 196, 255, 0.5);
+    width: 320px;
+}
+.newsletter-button {
+    padding: 0.8em 1.6em;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.newsletter-button:hover {
+    background-color: #003580;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
